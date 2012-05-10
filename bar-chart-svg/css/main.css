@@ -1,0 +1,18 @@
+svg {
+    margin-top: 100px;
+    margin-left: 100px
+}
+
+.chart rect {
+    stroke: white;
+    fill: steelblue;
+}
+
+.chart text {
+    font: 10px sans-serif;
+    fill: white;
+}
+
+.chart .rule {
+    fill: black;
+}

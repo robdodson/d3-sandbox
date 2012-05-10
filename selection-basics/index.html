@@ -1,0 +1,117 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <!-- Make sure the latest version of IE is used: http://html5boilerplate.com/docs/The-markup/#make-sure-the-latest-version-of-ie-is-used -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>D3 Basics: Selections</title>
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/libs/modernizr-2.5.3.min.js"></script>
+    <script src="js/libs/jquery-1.7.2.min.js"></script>
+    <script src="js/libs/d3.v2.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+
+    <div id="main">
+        <h1>D3 Basics: Selections</h1>
+    </div>
+
+    <script type="text/javascript">
+      // Global variables
+    </script>
+
+    <div id="chart-1">
+      <button>Run</button>
+    </div>
+
+    <script type="text/javascript">
+        (function() {
+          var svg = d3.select("#chart-1").append("svg")
+              .attr("width", w)
+              .attr("height", h);
+
+          svg.selectAll(".little")
+              .data(data)
+            .enter().append("circle")
+              .attr("class", "little")
+              .attr("cx", x)
+              .attr("cy", y)
+              .attr("r", 12);
+
+          d3.select("#chart-2 button").on("click", function() {
+            svg.selectAll(".select").remove();
+
+            svg.selectAll(".select")
+                .data(data)
+              .enter().append("circle")
+                .attr("class", "select")
+                .attr("cx", x)
+                .attr("cy", y)
+                .attr("r", 60)
+                .style("fill", "none")
+                .style("stroke", "red")
+                .style("stroke-opacity", 1e-6)
+                .style("stroke-width", 3)
+              .transition()
+                .duration(750)
+                .attr("r", 12)
+                .style("stroke-opacity", 1);
+          });
+        })();
+    </script>
+
+    <div id="chart-2">
+      <button>Run</button>
+    </div>
+
+    <script type="text/javascript">
+        (function() {
+          var svg = d3.select("#chart-2").append("svg")
+              .attr("width", w)
+              .attr("height", h);
+
+          svg.selectAll(".little")
+              .data(data)
+            .enter().append("circle")
+              .attr("class", "little")
+              .attr("cx", x)
+              .attr("cy", y)
+              .attr("r", 12);
+
+          d3.select("#chart-2 button").on("click", function() {
+            svg.selectAll(".select").remove();
+
+            svg.selectAll(".select")
+                .data(data)
+              .enter().append("circle")
+                .attr("class", "select")
+                .attr("cx", x)
+                .attr("cy", y)
+                .attr("r", 60)
+                .style("fill", "none")
+                .style("stroke", "red")
+                .style("stroke-opacity", 1e-6)
+                .style("stroke-width", 3)
+              .transition()
+                .duration(750)
+                .attr("r", 12)
+                .style("stroke-opacity", 1);
+          });
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+.chart {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin-top: -40px;
+}
+
+.label {
+  font-size: 12 px;
+  fill: #FFF;
+}
+
+.point {
+  stroke: #666;
+  fill: red;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

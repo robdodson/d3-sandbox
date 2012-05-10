@@ -1,0 +1,15 @@
+svg {
+    background-color: #ccc;
+}
+
+rect {
+    fill: green;
+}
+
+.axis {
+    stroke: black;
+}
+
+.tick {
+    stroke: black;
+}
